@@ -1,7 +1,11 @@
-PROMPT="\`if [[ \$? = "0" ]]; then echo '\e[32m%m\e[0m'; else echo '\e[31m%m\e[0m' ; fi\`:%~ $fg[magenta]$(rvm_prompt_info)$reset_color $(git_prompt_info)$reset_color
-%# "
-# git theming
-ZSH_THEME_GIT_PROMPT_PREFIX=""
-ZSH_THEME_GIT_PROMPT_SUFFIX=""
-ZSH_THEME_GIT_PROMPT_CLEAN=""
-ZSH_THEME_GIT_PROMPT_DIRTY="$fg_bold[red] *"
+ZSH_THEME_GIT_PROMPT_PREFIX="%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%} "
+ZSH_THEME_GIT_PROMPT_DIRTY="%{$reset_color%} %{$fg[red]%}✗%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_CLEAN="%{$reset_color%} %{$fg[green]%}✔%{$reset_color%}"
+
+setopt prompt_subst
+local return_code="%(?..%{$fg[red]%}%? ↵%{$reset_color%})"
+
+RPS1="${return_code}"
+PROMPT='%(?,%{%F{green}%},%{%F{red}%})%m:%{%F{white}%}%~ %{%F{magenta}%}$(rvm_prompt_info)%{$reset_color%}
+$(git_prompt_info)%#%{$reset_color%} '
