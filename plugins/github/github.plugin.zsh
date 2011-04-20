@@ -4,5 +4,8 @@ if [ "$commands[(I)hub]" ] && [ "$commands[(I)ruby]" ]; then
     function git(){hub "$@"}
 fi
 
+<<<<<<< HEAD
 # add github completion function to path
 fpath=($ZSH/plugins/github $fpath)
+=======
+>>>>>>> Remove fpath/compinit code from github and npm plugins
