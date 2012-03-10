@@ -4,3 +4,9 @@ alias sgem='sudo gem'
 
 # Find ruby file
 alias rfind='find . -name "*.rb" | xargs grep -n'
+
+# Alias bundle exec
+alias b='noglob bundle exec'
+
+# Don't use shell metacharacters on rake
+alias rake='noglob rake'
