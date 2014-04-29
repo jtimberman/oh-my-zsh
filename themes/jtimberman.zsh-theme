@@ -7,5 +7,5 @@ setopt prompt_subst
 local return_code="%(?..%{$fg[red]%}%? ↵%{$reset_color%})"
 
 RPS1="${return_code}"
-PROMPT='%(?,%{%F{green}%},%{%F{red}%})%m:%{%{$reset_color%}%}%~ %{%F{magenta}%}($(chruby_prompt_info))%{$reset_color%}
+PROMPT='%(?,%{%F{green}%},%{%F{red}%})%m:%{%{$reset_color%}%}%~ %{%F{magenta}%}($(ruby_version_info))%{$reset_color%}
 %{$reset_color%}$(git_prompt_info)%#%{$reset_color%} '

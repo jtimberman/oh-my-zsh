@@ -10,3 +10,7 @@ alias b='noglob bundle exec'
 
 # Don't use shell metacharacters on rake
 alias rake='noglob rake'
+
+function ruby_version_info() {
+  echo "$(ruby -v | cut -d' ' -f2)"
+}
